@@ -5,6 +5,7 @@ import { uuid } from '../Helpers/UUID'
 export default class Entity implements IEntity {
   id: string
   components: { [key:string]:any } = {}
+  gameObject: any
 
   constructor (idGenerator: Function = uuid) {
     this.id = idGenerator()
@@ -20,6 +21,10 @@ export default class Entity implements IEntity {
 
   removeComponentByName (componentName: string) {
     delete this.components[componentName]
+  }
+
+  registerGameObject (gameObject: any) {
+    this.gameObject = gameObject
   }
 
   save () {
