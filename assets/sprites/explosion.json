@@ -1,0 +1,125 @@
+{
+	"textures": [
+		{
+			"image": "explosion.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 54,
+				"h": 31
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "explosion-0-3.png",
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "explosion-0-4.png",
+					"frame": {
+						"x": 19,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "explosion-0-2.png",
+					"frame": {
+						"x": 37,
+						"y": 1,
+						"w": 16,
+						"h": 15
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 15
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "explosion-0-1.png",
+					"frame": {
+						"x": 37,
+						"y": 18,
+						"w": 15,
+						"h": 12
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 15,
+						"h": 12
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "explosion-0-0.png",
+					"frame": {
+						"x": 1,
+						"y": 19,
+						"w": 10,
+						"h": 7
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 10,
+						"h": 7
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:efcd2c0ee8fa3fbdc85538d719673eb4:06eb2f921ee43f823d79d0c2ed30abbf:900e1fb3093a9a6ecb2b2b49071c44f7$"
+	}
+}

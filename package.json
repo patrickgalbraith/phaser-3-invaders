@@ -1,0 +1,34 @@
+{
+  "name": "phaser3-boilerplate",
+  "version": "1.0.0",
+  "description": "Phaser 3 Boilerplate Project",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Galbraith",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "3.*"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.1",
+    "raw-loader": "^0.5.1",
+    "source-map-loader": "^0.2.3",
+    "tslint": "^5.9.1",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1",
+    "fancy-log": "^1.3.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "@types/webfontloader": "^1.6.29"
+  }
+}

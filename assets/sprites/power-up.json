@@ -1,0 +1,104 @@
+{
+	"textures": [
+		{
+			"image": "power-up.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 72,
+				"h": 18
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "power-up-0-0.png",
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "power-up-0-1.png",
+					"frame": {
+						"x": 19,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "power-up-1-0.png",
+					"frame": {
+						"x": 37,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "power-up-1-1.png",
+					"frame": {
+						"x": 55,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:a41220a29ca0ca93945fefc3b8473944:dfa863bb7e56a7d9cc12a1e70725bfad:ddd1c615976e997fe5d70a63da18c7e6$"
+	}
+}

@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("assets/backgrounds/desktop.jpg") #75a3b2 no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.main-content {
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #fff;
+  font-size: 0;
+}

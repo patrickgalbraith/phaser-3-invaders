@@ -1,0 +1,104 @@
+{
+	"textures": [
+		{
+			"image": "laser-bolts.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 9,
+				"h": 51
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "laser-bolts-1-1.png",
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 7,
+						"h": 15
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 7,
+						"h": 15
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "laser-bolts-1-0.png",
+					"frame": {
+						"x": 1,
+						"y": 18,
+						"w": 7,
+						"h": 14
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1,
+						"w": 7,
+						"h": 14
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "laser-bolts-0-0.png",
+					"frame": {
+						"x": 1,
+						"y": 34,
+						"w": 7,
+						"h": 7
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 6,
+						"w": 7,
+						"h": 7
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "laser-bolts-0-1.png",
+					"frame": {
+						"x": 1,
+						"y": 43,
+						"w": 7,
+						"h": 7
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 6,
+						"w": 7,
+						"h": 7
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:d010a6fc3b8b3c524936a957d61b3344:54d6cf4f3612d530702b8b1a6c221b22:958fc2a5036f0a86644d7fefe6b9fe9e$"
+	}
+}
