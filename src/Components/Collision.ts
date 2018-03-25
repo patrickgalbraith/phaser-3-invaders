@@ -1,6 +1,6 @@
 import IComponent from './IComponent'
 
-export default class Appearance implements IComponent {
+export default class Collision implements IComponent {
   readonly name = 'collision'
   state = {
     targets: [] as string[]

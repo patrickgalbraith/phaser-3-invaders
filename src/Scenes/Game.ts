@@ -6,6 +6,7 @@ import createPlayerShip from '../Assemblages/PlayerShip'
 import createEnemySmall from '../Assemblages/EnemySmall'
 import createSpaceBackdrop from '../Assemblages/SpaceBackdrop'
 import displayLevelUpText from '../Helpers/LevelUpText'
+import GameObjectManager from '../Systems/GameObjectManager';
 
 export default class GameScene extends Phaser.Scene {
   private systems: ISystem[] = []
@@ -61,12 +62,13 @@ export default class GameScene extends Phaser.Scene {
     })
 
     // Crate Entities
-    this.entities.push(createPlayerShip())
-    this.entities.push(createEnemySmall())
+    //this.entities.push(createPlayerShip())
+    //this.entities.push(createEnemySmall())
     this.entities.push(createSpaceBackdrop())
 
     // Create Systems
-    this.systems.push(new BackdropManager())
+    this.systems.push(new BackdropManager(this))
+    this.systems.push(new GameObjectManager(this))
 
     // Handle System create methods
     this.systems.forEach(s =>

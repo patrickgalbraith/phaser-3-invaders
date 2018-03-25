@@ -1,55 +1,67 @@
 import ISystem from './ISystem'
-import Entity from '../Entities/Entity'
+import PhaserEntity from '../Entities/PhaserEntity'
 import IEntity from '../Entities/IEntity'
-import { hasComponent } from '../Helpers/Filters'
+import { hasComponentType } from '../Helpers/Filters'
+import Appearance from '../Components/Appearance'
+import Collision from '../Components/Collision'
+import Position from '../Components/Position'
+import Scale from '../Components/Scale'
+import StaticAnimationLoop from '../Components/StaticAnimationLoop'
 
 export default class GameObjectManager implements ISystem {
   constructor (private readonly scene: Phaser.Scene) {}
 
   create (entities: IEntity[], events: Phaser.EventEmitter, data?: object) {
-    entities.filter(hasComponent('appearance'))
+    entities.filter(hasComponentType(Appearance))
             .forEach((entity: IEntity) => {
-              this.createEntity(entity as Entity)
+              this.createEntity(entity as PhaserEntity)
             })
   }
 
-  createEntity (entity: Entity) {
+  createEntity (entity: PhaserEntity) {
     let sprite: any = null
 
-    if (entity.components.collision) {
-      sprite = this.scene.physics.add.sprite(0, 0, entity.components.appearance.texture)
+    if (entity.hasComponentType(Collision)) {
+      sprite = this.scene.physics.add.sprite(0, 0, entity.getComponentType(Appearance).texture)
     } else {
-      sprite = this.scene.add.sprite(0, 0, entity.components.appearance.texture)
+      sprite = this.scene.add.sprite(0, 0, entity.getComponentType(Appearance).texture)
     }
 
-    entity.registerGameObject(sprite)
+    entity.setGameObject(sprite)
+    this.updateEntity(entity)
   }
 
-  updateEntity (entity: IEntity, gameObject: Phaser.GameObjects.Sprite | Phaser.Physics.Arcade.Sprite) {
-    if (entity.components.position) {
+  updateEntity (entity: PhaserEntity) {
+    const gameObject = entity.getGameObject<Phaser.GameObjects.Sprite | Phaser.Physics.Arcade.Sprite>()
+
+    if (entity.hasComponentType(Position)) {
       gameObject.setPosition(
-        entity.components.position.x,
-        entity.components.position.y
+        entity.getComponentType(Position).x,
+        entity.getComponentType(Position).y
       )
     }
 
-    if (entity.components.scale) {
+    if (entity.hasComponentType(Scale)) {
       gameObject.setScaleMode(
-        entity.components.scale.mode == 'NEAREST' ? Phaser.ScaleModes.NEAREST : Phaser.ScaleModes.LINEAR
+        entity.getComponentType(Scale).phaserScaleMode()
       )
 
       gameObject.setScale(
-        entity.components.scale.x,
-        entity.components.scale.y
+        entity.getComponentType(Scale).x,
+        entity.getComponentType(Scale).y
       )
     }
 
-    if (entity.components.staticAnimationLoop) {
-      gameObject.updateFrame(entity.components.staticAnimationLoop.nextFrame())
+    if (entity.hasComponentType(StaticAnimationLoop)) {
+      //gameObject.updateFrame(entity.getComponentType(StaticAnimationLoop).nextFrame())
     }
   }
 
   resize (entities: IEntity[], width: number, height: number, data?: object) {}
 
-  update (entities: IEntity[], timestep?: number, delta?: number, data?: object) {}
+  update (entities: IEntity[], timestep?: number, delta?: number, data?: object) {
+    // entities.forEach((entity) => {
+    //   this.updateEntity(entity as PhaserEntity)
+    // })
+  }
 }

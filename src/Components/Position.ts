@@ -27,4 +27,12 @@ export default class Position implements IComponent {
     this.state.x = x
     this.state.y = y
   }
+
+  get x () {
+    return this.state.x
+  }
+
+  get y () {
+    return this.state.y
+  }
 }

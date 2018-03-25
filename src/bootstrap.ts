@@ -1,4 +1,3 @@
-import * as WebFont from 'webfontloader'
 import Main from './Main'
 
 function startGame () {
@@ -6,7 +5,9 @@ function startGame () {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  WebFont.load({
+  const _window = window as any
+
+  _window.WebFont.load({
     google: {
       families: ['Press Start 2P']
     },

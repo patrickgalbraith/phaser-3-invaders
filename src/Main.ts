@@ -1,9 +1,7 @@
 import Phaser from 'phaser'
 import { default as BootScene } from './Scenes/Boot'
-import { default as IntroScene } from './Scenes/Intro'
 import { default as GameScene } from './Scenes/Game'
 import { default as GameUIScene } from './Scenes/GameUI'
-import { default as GameOverScene } from './Scenes/GameOver'
 
 export default class Main {
   game: Phaser.Game
@@ -27,7 +25,7 @@ export default class Main {
           debugShowVelocity: true
         }
       },
-      scene: [BootScene, IntroScene, GameScene, GameUIScene, GameOverScene]
+      scene: [BootScene, GameScene, GameUIScene]
     }
     this.game = new Phaser.Game(this.config)
   }

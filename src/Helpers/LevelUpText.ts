@@ -1,5 +1,5 @@
 export default function displayLevelUpText(scene: Phaser.Scene, width: number, height: number, level: number) {
-  const text = scene.add.text(0, 0, `Level ${level}`, { font: '900 60px Titillium Web', fill: '#ffffff' })
+  const text = scene.add.text(0, 0, `Level ${level}`, { font: '42px Press Start 2P', fill: '#ffffff' })
   const x    = (width / 2) - (text.width / 2)
   const y    = (height / 2) - (text.height / 2)
 

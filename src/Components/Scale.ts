@@ -22,4 +22,20 @@ export default class Scale implements IComponent {
   setScaleMode (mode: string) {
     this.state.mode = mode
   }
+
+  phaserScaleMode () {
+    return this.state.mode == 'NEAREST' ? Phaser.ScaleModes.NEAREST : Phaser.ScaleModes.LINEAR
+  }
+
+  get x () {
+    return this.state.x
+  }
+
+  get y () {
+    return this.state.y
+  }
+
+  get mode () {
+    return this.state.mode
+  }
 }

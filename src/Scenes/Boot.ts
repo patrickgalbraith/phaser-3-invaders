@@ -25,6 +25,9 @@ export default class Boot extends Phaser.Scene {
       progress.destroy()
     })
 
+    // Backgrounds
+    this.load.image('backgrounds/space',   'assets/backgrounds/space.png')
+
     // Sprites
     this.load.atlas('sprites/ship',        'assets/sprites/ship.png',        'assets/sprites/ship.json',        {}, {})
     this.load.atlas('sprites/enemies',     'assets/sprites/enemies.png',     'assets/sprites/enemies.json',     {}, {})
