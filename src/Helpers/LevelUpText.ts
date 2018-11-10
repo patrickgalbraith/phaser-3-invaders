@@ -1,7 +1,7 @@
 export default function displayLevelUpText(scene: Phaser.Scene, width: number, height: number, level: number) {
-  const text = scene.add.text(0, 0, `Level ${level}`, { font: '42px Press Start 2P', fill: '#ffffff' })
+  const text = scene.add.text(0, 0, `Level ${level}`, { font: '32px "Press Start 2P"', fill: '#ffffff' })
   const x    = (width / 2) - (text.width / 2)
-  const y    = (height / 2) - (text.height / 2)
+  const y    = (height / 2) - (text.height / 2) - 20
 
   text.setPosition(x, y)
   text.alpha = 0
@@ -12,7 +12,7 @@ export default function displayLevelUpText(scene: Phaser.Scene, width: number, h
       delay   : 100,
       duration: 1000,
       alpha   : 1,
-      y       : y - 20,
+      y       : y + 20,
       ease    : 'Sine.easeIn',
       onComplete: () => tweenOut()
     })

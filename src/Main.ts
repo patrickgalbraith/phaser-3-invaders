@@ -20,21 +20,22 @@ export default class Main {
           gravity: { x: 0,  y: 0 },
 
           // Uncomment lines below to show collision and velocity lines
-          debug: true,
-          debugShowBody: true,
-          debugShowVelocity: true
+          // debug: true,
+          // debugShowBody: true,
+          // debugShowVelocity: true
         }
       },
+      pixelArt: true,
       scene: [BootScene, GameScene, GameUIScene]
     }
     this.game = new Phaser.Game(this.config)
   }
 
   static getWidth() {
-    return 1024
+    return 640
   }
 
   static getHeight() {
-    return 768
+    return 480
   }
 }

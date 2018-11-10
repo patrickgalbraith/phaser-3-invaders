@@ -2,13 +2,13 @@ import IEntity, { IComponentType } from './IEntity'
 import IComponent from '../Components/IComponent'
 import { uuid } from '../Helpers/UUID'
 
-export default class PhaserEntity implements IEntity {
+export default class PhaserEntity<G> implements IEntity {
   id: string
   components: IComponent[] = []
-  gameObject: any
+  gameObject: G
 
-  constructor (idGenerator: Function = uuid) {
-    this.id = idGenerator()
+  constructor (id: string | Function = uuid) {
+    this.id = typeof(id) == 'string' ? id : id()
   }
 
   private getComponentIndex<T extends IComponent>(type: IComponentType<T>): number {
@@ -71,18 +71,19 @@ export default class PhaserEntity implements IEntity {
     return component as T
   }
 
-  setGameObject(gameObject: any) {
+  setGameObject(gameObject: G) {
     this.gameObject = gameObject
   }
 
-  getGameObject<T>(): T {
-    return this.gameObject as T
+  getGameObject(): G {
+    return this.gameObject as G
   }
 
   save () {
     return {
       id: this.id,
-      components: this.components.forEach(c => c.state)
+      components: this.components.forEach(c => c.state),
+      gameObject: (this.gameObject as any).toJSON ? (this.gameObject as any).toJSON() : null
     }
   }
 

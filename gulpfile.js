@@ -52,7 +52,7 @@ gulp.task('webpack', function (callback) {
   })
 })
 
-gulp.task('webpack-dev-server', function () {
+gulp.task('webpack-dev-server', function (cb) {
   var compiler = webpack(webpackConfig)
 
   new WebpackDevServer(compiler, webpackConfig.devServer).listen(8080, '127.0.0.1', function(err) {
@@ -60,6 +60,8 @@ gulp.task('webpack-dev-server', function () {
       return log.error('[webpack-dev-server]', err)
     log('[webpack-dev-server]', 'http://localhost:8080/')
   })
+
+  cb()
 })
 
 gulp.task('copy-assets', function () {

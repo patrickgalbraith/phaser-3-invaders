@@ -28564,6 +28564,8 @@ declare namespace Phaser {
                  */
                 setMaxVelocity(x: any, y: any): any;
 
+                body: Phaser.Physics.Arcade.Body;
+
             }
 
             /**

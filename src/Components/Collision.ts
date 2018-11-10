@@ -17,4 +17,8 @@ export default class Collision implements IComponent {
   removeTarget (target: string) {
     this.state.targets.splice(this.state.targets.indexOf(target), 1)
   }
+
+  get targets () {
+    return this.state.targets
+  }
 }

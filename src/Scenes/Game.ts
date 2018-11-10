@@ -6,7 +6,9 @@ import createPlayerShip from '../Assemblages/PlayerShip'
 import createEnemySmall from '../Assemblages/EnemySmall'
 import createSpaceBackdrop from '../Assemblages/SpaceBackdrop'
 import displayLevelUpText from '../Helpers/LevelUpText'
-import GameObjectManager from '../Systems/GameObjectManager';
+import PlayerManager from '../Systems/PlayerManager'
+import ProjectileManager from '../Systems/ProjectileManager'
+import EnemyManager from '../Systems/EnemyManager'
 
 export default class GameScene extends Phaser.Scene {
   private systems: ISystem[] = []
@@ -21,8 +23,8 @@ export default class GameScene extends Phaser.Scene {
   preload () {}
 
   create () {
-    // Uncomment below to set default world bounds collisions
-    //this.physics.world.setBoundsCollision(true, true, true, true)
+    // Uncomment below to set default world bounds collisions (left, right, up, down)
+    this.physics.world.setBoundsCollision(true, true, false, false)
 
     // Set default data
     const defaultData = {
@@ -62,17 +64,18 @@ export default class GameScene extends Phaser.Scene {
     })
 
     // Crate Entities
-    //this.entities.push(createPlayerShip())
-    //this.entities.push(createEnemySmall())
-    this.entities.push(createSpaceBackdrop())
+    this.entities.push(createSpaceBackdrop(this))
+    this.entities.push(createPlayerShip(this))
 
     // Create Systems
     this.systems.push(new BackdropManager(this))
-    this.systems.push(new GameObjectManager(this))
+    this.systems.push(new PlayerManager(this))
+    this.systems.push(new ProjectileManager(this))
+    this.systems.push(new EnemyManager(this))
 
     // Handle System create methods
     this.systems.forEach(s =>
-      s.create(this.entities, this.events, this.data.getAll()))
+      s.create ? s.create(this.entities, this.events, this.data.getAll()) : null)
 
     // Show "Level 1" text
     this.displayLevelUp(1)
@@ -80,12 +83,12 @@ export default class GameScene extends Phaser.Scene {
 
   resize (width: number, height: number) {
     this.systems.forEach(s =>
-      s.resize(this.entities, width, height, this.data.getAll()))
+      s.resize ? s.resize(this.entities, width, height, this.data.getAll()) : null)
   }
 
   update (timestep: number, delta: number) {
     this.systems.forEach(s =>
-      s.update(this.entities, timestep, delta, this.data.getAll()))
+      s.update ? s.update(this.entities, timestep, delta, this.data.getAll()) : null)
   }
 
   dataUpdate () {
